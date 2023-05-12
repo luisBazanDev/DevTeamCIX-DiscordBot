@@ -1,0 +1,33 @@
+{
+  "name": "devteamcix-discordbot",
+  "version": "1.0.0",
+  "description": "Discord bot for the DevTeamCIX of the UTP university",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisBazanDev/DevTeamCIX-DiscordBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Luis Bazán",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisBazanDev/DevTeamCIX-DiscordBot/issues"
+  },
+  "homepage": "https://github.com/luisBazanDev/DevTeamCIX-DiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.1.1",
+    "npm": "^9.6.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
