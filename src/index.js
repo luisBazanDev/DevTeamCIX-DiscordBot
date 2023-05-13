@@ -1,17 +1,17 @@
-import { Client } from "discord.js";
-import DotEnv from "dotenv";
+import dotenv from "dotenv";
+dotenv.config();
+import { ShardingManager } from "discord.js";
 
-DotEnv.config();
-
-const client = new Client({
-  intents: ["GuildMessageTyping", "Guilds", "GuildMessages"],
+const manager = new ShardingManager("./src/bot.js", {
+  totalShards: "auto",
+  token: process.env.DISCORD_TOKEN,
+  respawn: true,
 });
 
-client.on("ready", () => {
-  client.guilds
-    .resolve("1082168079427047424")
-    .channels.resolve("1106251088757260358")
-    .send("Hello world");
+manager.on("shardCreate", (shard) => {
+  shard.on("spawn", () => {
+    console.log("ShardSpawn");
+  });
 });
 
-client.login(process.env.DISCORD_TOKEN);
+manager.spawn();

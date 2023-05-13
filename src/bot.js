@@ -1,4 +1,5 @@
 import { Client, IntentsBitField as Intents, Partials } from "discord.js";
+import connectDatabase from "./database/connect.js";
 
 const client = new Client({
   allowedMentions: {
@@ -21,6 +22,7 @@ const client = new Client({
 });
 
 // Connect to database
+connectDatabase();
 
 // Client settings
 
