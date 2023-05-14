@@ -48,7 +48,7 @@ To Do's
   - [ ] `...`
 - Handlers
   - Event handler
-    - [ ] Ready
+    - [x] Ready
     - [ ] Create message
     - [ ] `...`
   - Command handler

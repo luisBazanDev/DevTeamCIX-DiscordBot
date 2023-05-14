@@ -1,6 +1,7 @@
 import { Client, IntentsBitField as Intents, Partials } from "discord.js";
 import connectDatabase from "./database/connect.js";
 import guildConfig from "./config/guild.js";
+import { loadEvents } from "./handlers/handlersManager.js";
 
 const client = new Client({
   allowedMentions: {
@@ -31,6 +32,7 @@ client.guildConfig = guildConfig;
 // Client utilities
 
 // Load handlers
+loadEvents(client);
 
 // Login bot
 client.login(process.env.DISCORD_TOKEN);
