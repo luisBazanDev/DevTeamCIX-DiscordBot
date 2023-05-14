@@ -43,6 +43,16 @@ npm run dev
 
 To Do's
 
+- [ ] Log system
+- [ ] Welcome system
+- [ ] Experience system
+- [ ] User information system
+- [ ] Polls system
+- Projects manager
+  - [ ] Project model
+  - [ ] Role manager
+  - [ ] Members manager
+  - [ ] Create project method
 - Configs files
   - [x] guils
   - [ ] `...`
@@ -67,7 +77,3 @@ To Do's
       - Startup
       - Channels
       - `...`
-
-```
-
-```
