@@ -2,6 +2,11 @@
 
 Discord bot for the DevTeamCIX of the UTP university
 
+# Requeriments
+
+- nodejs v18+
+- MongoDB (solo si no tienes una base de datos externa)
+
 # Set-up development environment
 
 1. Clonar el repositorio: `git clone git@github.com:luisBazanDev/DevTeamCIX-DiscordBot.git`
@@ -9,3 +14,27 @@ Discord bot for the DevTeamCIX of the UTP university
 3. Instalar las dependencias `npm install`
 4. Instalar las dependencias de desarrollo `npm install -D`
 5. Correr el bot en modo desarrollo `npm run dev`
+6. Crear una copia del archivo `example.env` y llamarlo `.env`
+
+To Do's
+
+- Handlers
+  - Event handler
+    - [ ] Ready
+    - [ ] Create message
+    - [ ] `...`
+  - Command handler
+    - [ ] test
+    - [ ] `...`
+- Database
+  - Models
+    - [ ] Users
+      - Username
+      - Level
+      - Bio
+      - Projects
+      - `...`
+    - [ ] Projects
+      - Name
+      - Startup
+      - `...`
