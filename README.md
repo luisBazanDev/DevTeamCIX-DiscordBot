@@ -59,6 +59,7 @@ To Do's
 - Handlers
   - Event handler
     - [x] Ready
+    - [x] Application command interaction
     - [ ] Create message
     - [ ] `...`
   - Command handler

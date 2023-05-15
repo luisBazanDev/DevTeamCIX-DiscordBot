@@ -1,13 +1,18 @@
-import { Client, CommandInteraction } from "discord.js";
+import {
+  Client,
+  CommandInteraction,
+  ApplicationCommandOptionType,
+  ApplicationCommandType,
+} from "discord.js";
 
 export default {
   name: "example-command",
   description: "this command is for test a bot",
-  type: 1,
+  type: ApplicationCommandType.ChatInput,
   options: [
     // https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure
     {
-      type: 6, // https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type
+      type: ApplicationCommandOptionType.User, // https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type
       name: "user",
       description: "idk it's a simple example",
     },
@@ -18,5 +23,10 @@ export default {
    * @param {CommandInteraction} interaction
    * @param {String[]} args
    */
-  run: async (client, interaction, args) => {},
+  run: async (client, interaction, args) => {
+    interaction.reply({
+      content: "Hello world!",
+      ephemeral: true,
+    });
+  },
 };
