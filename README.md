@@ -62,7 +62,7 @@ To Do's
     - [ ] Create message
     - [ ] `...`
   - Command handler
-    - [ ] test
+    - [x] example
     - [ ] `...`
 - Database
   - Models

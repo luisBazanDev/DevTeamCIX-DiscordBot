@@ -6,7 +6,7 @@ import {
 } from "discord.js";
 import connectDatabase from "./database/connect.js";
 import guildConfig from "./config/guild.js";
-import { loadEvents } from "./handlers/handlersManager.js";
+import { loadEvents, loadCommands } from "./handlers/handlersManager.js";
 
 const client = new Client({
   allowedMentions: {
@@ -38,6 +38,7 @@ client.commands = new Collection();
 // Client utilities
 
 // Load handlers
+loadCommands(client);
 loadEvents(client);
 
 // Login bot
