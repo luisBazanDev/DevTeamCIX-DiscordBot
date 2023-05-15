@@ -1,4 +1,10 @@
+import { Client } from "discord.js";
 import { glob } from "glob";
+
+/**
+ *
+ * @param {Client} client
+ */
 
 export async function loadEvents(client) {
   for (const file of await glob("./src/events/**/*.js", { absolute: false })) {

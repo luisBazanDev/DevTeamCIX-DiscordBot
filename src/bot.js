@@ -1,4 +1,9 @@
-import { Client, IntentsBitField as Intents, Partials } from "discord.js";
+import {
+  Client,
+  IntentsBitField as Intents,
+  Partials,
+  Collection,
+} from "discord.js";
 import connectDatabase from "./database/connect.js";
 import guildConfig from "./config/guild.js";
 import { loadEvents } from "./handlers/handlersManager.js";
@@ -28,6 +33,7 @@ connectDatabase();
 
 // Client settings
 client.guildConfig = guildConfig;
+client.commands = new Collection();
 
 // Client utilities
 
