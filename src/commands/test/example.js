@@ -3,7 +3,9 @@ import {
   CommandInteraction,
   ApplicationCommandOptionType,
   ApplicationCommandType,
+  EmbedBuilder,
 } from "discord.js";
+import { resolveUser } from "../../database/models/users.js";
 
 export default {
   name: "example-command",
@@ -24,8 +26,11 @@ export default {
    * @param {String[]} args
    */
   run: async (client, interaction, args) => {
+    const embed = new EmbedBuilder()
+      .setTitle("Hello world!")
+      .setDescription(JSON.stringify(await resolveUser(interaction.user)));
     interaction.reply({
-      content: "Hello world!",
+      embeds: [embed],
       ephemeral: true,
     });
   },
