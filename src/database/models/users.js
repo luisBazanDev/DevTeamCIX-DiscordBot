@@ -53,18 +53,8 @@ const User = new Schema(
         default: 0,
       },
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      required: true,
-    },
-    updateAt: {
-      type: Date,
-      default: Date.now,
-      required: true,
-    },
   },
-  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
+  { timestamps: true }
 );
 
 const userModel = model("User", User);

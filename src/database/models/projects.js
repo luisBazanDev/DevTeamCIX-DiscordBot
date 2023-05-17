@@ -25,20 +25,11 @@ const Project = new Schema(
     },
     state: {
       type: String,
-      enum: ["upcomming", "working", "test", "finished", "archive"],
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      required: true,
-    },
-    updateAt: {
-      type: Date,
-      default: Date.now,
-      required: true,
+      enum: ["upcoming", "working", "test", "finished", "archive"],
+      default: "upcoming",
     },
   },
-  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
+  { timestamps: true }
 );
 
 const projectModel = model("Project", Project);
