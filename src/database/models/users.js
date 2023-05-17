@@ -1,68 +1,71 @@
 import { User as UserDiscord } from "discord.js";
 import { Schema, model } from "mongoose";
 
-const User = new Schema({
-  _id: {
-    type: String,
-    required: true,
-  },
-  displayName: {
-    type: String,
-    default: null,
-  },
-  username: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    default: null,
-  },
-  universityCode: {
-    type: String,
-    default: null,
-  },
-  information: {
-    grade: {
-      type: Number,
-      default: null,
+const User = new Schema(
+  {
+    _id: {
+      type: String,
+      required: true,
     },
-    social: {
+    displayName: {
       type: String,
       default: null,
     },
-    description: {
+    username: {
+      type: String,
+      required: true,
+    },
+    email: {
       type: String,
       default: null,
     },
-    technologies: {
-      type: Array,
-      default: [],
+    universityCode: {
+      type: String,
+      default: null,
     },
-    projects: {
-      type: Array,
-      default: [],
+    information: {
+      grade: {
+        type: Number,
+        default: null,
+      },
+      social: {
+        type: String,
+        default: null,
+      },
+      description: {
+        type: String,
+        default: null,
+      },
+      technologies: {
+        type: Array,
+        default: [],
+      },
+      projects: {
+        type: Array,
+        default: [],
+      },
+      level: {
+        type: Number,
+        default: 0,
+      },
+      exp: {
+        type: Number,
+        default: 0,
+      },
     },
-    level: {
-      type: Number,
-      default: 0,
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      required: true,
     },
-    exp: {
-      type: Number,
-      default: 0,
+    updateAt: {
+      type: Date,
+      default: Date.now,
+      required: true,
     },
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    required: true,
-  },
-  updateAt: {
-    type: Date,
-    default: Date.now,
-    required: true,
-  },
-});
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
+);
 
 const userModel = model("User", User);
 

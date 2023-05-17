@@ -1,42 +1,45 @@
 import { User as UserDiscord } from "discord.js";
 import { Schema, model } from "mongoose";
 
-const Project = new Schema({
-  name: {
-    type: String,
-    required: true,
+const Project = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      default: null,
+    },
+    channels: {
+      type: Array,
+      default: [],
+    },
+    roles: {
+      type: Array,
+      default: [],
+    },
+    administrators: {
+      type: Array,
+      required: true,
+    },
+    state: {
+      type: String,
+      enum: ["upcomming", "working", "test", "finished", "archive"],
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      required: true,
+    },
+    updateAt: {
+      type: Date,
+      default: Date.now,
+      required: true,
+    },
   },
-  description: {
-    type: String,
-    default: null,
-  },
-  channels: {
-    type: Array,
-    default: [],
-  },
-  roles: {
-    type: Array,
-    default: [],
-  },
-  administrators: {
-    type: Array,
-    required: true,
-  },
-  state: {
-    type: String,
-    enum: ["upcomming", "working", "test", "finished", "archive"],
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    required: true,
-  },
-  updateAt: {
-    type: Date,
-    default: Date.now,
-    required: true,
-  },
-});
+  { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
+);
 
 const projectModel = model("Project", Project);
 
