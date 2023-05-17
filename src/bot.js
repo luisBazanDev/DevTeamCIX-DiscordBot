@@ -6,6 +6,7 @@ import {
 } from "discord.js";
 import connectDatabase from "./database/connect.js";
 import guildConfig from "./config/guild.js";
+import clientConfig from "./config/client.js";
 import { loadEvents, loadCommands } from "./handlers/handlersManager.js";
 
 const client = new Client({
@@ -33,6 +34,7 @@ connectDatabase();
 
 // Client settings
 client.guildConfig = guildConfig;
+client.clientConfig = clientConfig;
 client.commands = new Collection();
 
 // Client utilities
