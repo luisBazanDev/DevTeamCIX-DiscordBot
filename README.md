@@ -49,7 +49,7 @@ To Do's
 - [ ] User information system
 - [ ] Polls system
 - Projects manager
-  - [ ] Project model
+  - [x] Project model
   - [ ] Role manager
   - [ ] Members manager
   - [ ] Create project method
@@ -65,7 +65,8 @@ To Do's
   - Command handler
     - [x] example
     - [x] edit-info
-    - [ ] information
+    - [x] information
+    - [x] create-project
     - [ ] `...`
 - Database
   - Models
