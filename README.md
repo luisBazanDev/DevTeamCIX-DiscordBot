@@ -69,14 +69,27 @@ To Do's
     - [ ] `...`
 - Database
   - Models
-    - [ ] Users
-      - Username
-      - Level
-      - Bio
-      - Projects
-      - `...`
-    - [ ] Projects
-      - Name
-      - Startup
-      - Channels
-      - `...`
+    - [x] Users
+      - displayName
+      - username
+      - email
+      - universityCode
+      - information
+        - grade
+        - social
+        - description
+        - technologies
+        - projects
+        - level
+        - exp
+      - createdAt
+      - updateAt
+    - [x] Projects
+      - name
+      - description
+      - channels
+      - roles
+      - administrators
+      - state
+      - createdAt
+      - updateAt

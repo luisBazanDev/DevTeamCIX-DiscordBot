@@ -43,6 +43,24 @@ const User = new Schema({
       type: Array,
       default: [],
     },
+    level: {
+      type: Number,
+      default: 0,
+    },
+    exp: {
+      type: Number,
+      default: 0,
+    },
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    required: true,
+  },
+  updateAt: {
+    type: Date,
+    default: Date.now,
+    required: true,
   },
 });
 
