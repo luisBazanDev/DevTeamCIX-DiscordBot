@@ -41,16 +41,37 @@ export default userModel;
  * @param {String} id
  * @returns
  */
-export async function resolveProject(id) {
+export async function getProject(id) {
   try {
-    let data = await projectModel.findOne({ _id: user.id });
-    if (!data) {
-      data = new projectModel();
-      await data.save();
-    }
-
-    return data;
+    return await projectModel.findOne({ _id: id });
   } catch (err) {
     console.error(err);
+  }
+}
+
+/**
+ *
+ * @param {{name:String, description:String, channels:String[], roles:String[], administrators:String[]}} projectOptions
+ */
+export async function createProject({
+  name,
+  description = "No description for this project.",
+  channels = [],
+  roles = [],
+  administrators,
+}) {
+  try {
+    const projectData = new projectModel({
+      name,
+      description,
+      channels,
+      roles,
+      administrators,
+    });
+    projectData.save();
+    return projectData;
+  } catch (err) {
+    console.error(err);
+    return null;
   }
 }
