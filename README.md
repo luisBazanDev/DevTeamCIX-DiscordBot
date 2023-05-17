@@ -60,6 +60,7 @@ To Do's
   - Event handler
     - [x] Ready
     - [x] Application command interaction
+    - [x] Modal submit interactions
     - [ ] Create message
     - [ ] `...`
   - Command handler
@@ -67,6 +68,9 @@ To Do's
     - [x] edit-info
     - [x] information
     - [x] create-project
+    - [ ] `...`
+  - Modal handler
+    - [ ] create project
     - [ ] `...`
 - Database
   - Models

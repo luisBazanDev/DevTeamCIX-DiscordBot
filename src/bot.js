@@ -7,7 +7,11 @@ import {
 import connectDatabase from "./database/connect.js";
 import guildConfig from "./config/guild.js";
 import clientConfig from "./config/client.js";
-import { loadEvents, loadCommands } from "./handlers/handlersManager.js";
+import {
+  loadEvents,
+  loadCommands,
+  loadModals,
+} from "./handlers/handlersManager.js";
 
 const client = new Client({
   allowedMentions: {
@@ -36,11 +40,13 @@ connectDatabase();
 client.guildConfig = guildConfig;
 client.clientConfig = clientConfig;
 client.commands = new Collection();
+client.modals = new Collection();
 
 // Client utilities
 
 // Load handlers
 loadCommands(client);
+loadModals(client);
 loadEvents(client);
 
 // Login bot

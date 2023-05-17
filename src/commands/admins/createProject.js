@@ -66,10 +66,11 @@ export default {
         .setLabel("Descripción del proyecto")
         .setPlaceholder("Project description")
         .setStyle(TextInputStyle.Paragraph)
+        .setRequired(false)
     );
 
     const modal = new ModalBuilder()
-      .setCustomId("create-project-" + template)
+      .setCustomId("create-project_" + template)
       .setTitle("New project")
       .addComponents(nameRow, descriptionRow);
 
