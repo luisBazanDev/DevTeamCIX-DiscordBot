@@ -15,7 +15,7 @@ export default async function (client) {
      *
      * @param {CommandInteraction} interaction
      */ async (interaction) => {
-      if (!interaction.isCommand) return;
+      if (!interaction.isCommand()) return;
 
       // Only commands on main guild
       if (interaction.guildId != client.guildConfig.id) return;
