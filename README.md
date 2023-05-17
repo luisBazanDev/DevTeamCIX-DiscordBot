@@ -64,6 +64,8 @@ To Do's
     - [ ] `...`
   - Command handler
     - [x] example
+    - [x] edit-info
+    - [ ] information
     - [ ] `...`
 - Database
   - Models
