@@ -13,7 +13,15 @@ const Project = new Schema(
     },
     channels: {
       type: Array,
-      default: [],
+      default: [
+        {
+          id: String,
+          type: {
+            enum: ["voice", "text"],
+            required: true,
+          },
+        },
+      ],
     },
     roles: {
       type: Array,
