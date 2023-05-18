@@ -42,7 +42,7 @@ const Project = new Schema(
 
 const projectModel = model("Project", Project);
 
-export default userModel;
+export default projectModel;
 
 /**
  *

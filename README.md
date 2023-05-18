@@ -68,6 +68,8 @@ To Do's
     - [x] edit-info
     - [x] information
     - [x] create-project
+    - Project
+      - [x] list
     - [ ] `...`
   - Modal handler
     - [ ] create project
