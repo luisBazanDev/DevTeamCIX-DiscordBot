@@ -55,6 +55,7 @@ To Do's
   - [ ] Create project method
 - Configs files
   - [x] guils
+  - [x] client
   - [ ] `...`
 - Handlers
   - Event handler
@@ -72,7 +73,7 @@ To Do's
       - [x] list
     - [ ] `...`
   - Modal handler
-    - [ ] create project
+    - [x] create project
     - [ ] `...`
 - Database
   - Models
