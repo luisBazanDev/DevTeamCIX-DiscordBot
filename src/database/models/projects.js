@@ -17,7 +17,7 @@ const Project = new Schema(
         {
           id: String,
           type: {
-            enum: ["voice", "text"],
+            enum: ["voice", "text", "category"],
             required: true,
           },
         },
