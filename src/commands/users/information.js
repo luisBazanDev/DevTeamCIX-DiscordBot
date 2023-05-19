@@ -65,8 +65,14 @@ export default {
         },
         {
           name: "Tecnologias",
-          value:
-            parseArrayToString(userData.information.technologies) ?? "`-----`",
+          value: parseArrayToString(
+            userData.information.technologies.map((techDB) => {
+              for (const tech of client.clientConfig.tech) {
+                if (tech.value === techDB) return tech.name;
+              }
+              return techDB;
+            })
+          ),
           inline: true,
         },
         {

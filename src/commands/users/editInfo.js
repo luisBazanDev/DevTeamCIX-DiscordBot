@@ -5,6 +5,7 @@ import {
   CommandInteraction,
 } from "discord.js";
 import { resolveUser } from "../../database/models/users.js";
+import clientConfig from "../../config/client.js";
 
 export default {
   name: "edit-info",
@@ -12,34 +13,59 @@ export default {
   type: ApplicationCommandType.ChatInput,
   options: [
     {
-      type: ApplicationCommandOptionType.String,
-      required: true,
-      name: "dato",
-      description: "Que tipo de dato deseas actualizar",
-      choices: [
+      name: "email",
+      description: "Comando para actualizar su correo electronico",
+      type: ApplicationCommandOptionType.Subcommand,
+      options: [
         {
           name: "email",
-          value: "email",
-        },
-        {
-          name: "descripcion",
-          value: "description",
-        },
-        {
-          name: "grado",
-          value: "grade",
-        },
-        {
-          name: "tecnologias",
-          value: "technologies",
+          description: "Nuevo correo",
+          type: ApplicationCommandOptionType.String,
+          required: true,
         },
       ],
     },
     {
-      type: ApplicationCommandOptionType.String,
-      required: true,
-      name: "nuevo-valor",
-      description: "El nuevo valor a actualizar",
+      name: "description",
+      description: "Comando para actualizar su descripcion",
+      type: ApplicationCommandOptionType.Subcommand,
+      options: [
+        {
+          name: "description",
+          description: "Nueva descripcion",
+          type: ApplicationCommandOptionType.String,
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "grade",
+      description: "Comando para actualizar su descripcion",
+      type: ApplicationCommandOptionType.Subcommand,
+      options: [
+        {
+          name: "grade",
+          description: "Nuevo grado 1 al 10",
+          type: ApplicationCommandOptionType.Integer,
+          min_value: 1,
+          max_value: 10,
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "technologies",
+      description: "Comando para actualizar las tecnologias que manejas",
+      type: ApplicationCommandOptionType.Subcommand,
+      options: [
+        {
+          name: "tech",
+          description: "Habilitar o deshabilitar la tecnologia especificada",
+          type: ApplicationCommandOptionType.String,
+          required: true,
+          choices: clientConfig.tech,
+        },
+      ],
     },
   ],
   /**
@@ -50,6 +76,7 @@ export default {
    */
   run: async (client, interaction, args) => {
     const userData = await resolveUser(interaction.user);
+    console.log(args);
 
     switch (args[0].toLowerCase()) {
       case "email":
@@ -59,10 +86,14 @@ export default {
         userData.information.description = args[1].toLowerCase();
         break;
       case "grade":
-        userData.information.grade = args[1].toLowerCase();
+        userData.information.grade = args[1];
         break;
       case "technologies":
-        userData.information.technologies = args[1].toLowerCase();
+        const technologie = args[1].toLowerCase();
+        const index = userData.information.technologies.indexOf(technologie);
+        index == -1
+          ? userData.information.technologies.push(technologie)
+          : userData.information.technologies.splice(index, index);
         break;
     }
 
