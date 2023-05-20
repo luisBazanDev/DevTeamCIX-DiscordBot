@@ -77,7 +77,7 @@ export default {
         },
         {
           name: "Redes sociales",
-          value: userData.information.social ?? "`-----`",
+          value: parseArrayToString(Object.values(userData.information.social)),
           inline: true,
         },
       ],

@@ -29,8 +29,8 @@ const User = new Schema(
         default: null,
       },
       social: {
-        type: String,
-        default: null,
+        type: Object,
+        default: {},
       },
       description: {
         type: String,

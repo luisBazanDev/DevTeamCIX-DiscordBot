@@ -18,26 +18,22 @@ export default {
       value: "c++",
     },
   ],
-  social: [
-    {
+  social: {
+    github: {
       urls: ["https://github.com/"],
       name: "GitHub",
-      valued: "github",
     },
-    {
+    instagram: {
       urls: ["https://www.instagram.com/"],
       name: "Instagram",
-      valued: "instagram",
     },
-    {
+    facebook: {
       urls: ["https://www.facebook.com/"],
       name: "Facebook",
-      valued: "facebook",
     },
-    {
+    twitch: {
       urls: ["https://twitch.tv/"],
       name: "Twitch",
-      valued: "twitch",
     },
-  ],
+  },
 };

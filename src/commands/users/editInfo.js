@@ -67,6 +67,30 @@ export default {
         },
       ],
     },
+    {
+      name: "social",
+      description: "Comando para actualizar tus redes sociales",
+      type: ApplicationCommandOptionType.Subcommand,
+      options: [
+        {
+          name: "social",
+          description: "Ingresar tu nueva red social",
+          type: ApplicationCommandOptionType.String,
+          required: true,
+          choices: Object.keys(clientConfig.social).map((k) => {
+            return {
+              name: clientConfig.social[k].name,
+              value: k,
+            };
+          }),
+        },
+        {
+          name: "link",
+          description: "Ingresa el link de tu perfil",
+          type: ApplicationCommandOptionType.String,
+        },
+      ],
+    },
   ],
   /**
    *
@@ -94,6 +118,36 @@ export default {
         index == -1
           ? userData.information.technologies.push(technologie)
           : userData.information.technologies.splice(index, index);
+        break;
+      case "social":
+        var existsSocial = userData.information.social[args[1]];
+
+        if (args.length !== 3) {
+        } else {
+          for (const url of clientConfig.social[args[1]].urls) {
+            if (args[2].startsWith(url)) {
+              userData.information.social[args[1]] = args[2];
+              await userData.save();
+              console.log(userData);
+              interaction.reply({
+                content: "Red social actualizada con exito",
+                ephemeral: true,
+              });
+              return;
+            }
+          }
+          interaction.reply({
+            content: "Link invalido",
+            ephemeral: true,
+          });
+          return;
+        }
+        break;
+      default:
+        interaction.reply({
+          content: "Fail on execute this command",
+          ephemeral: true,
+        });
         break;
     }
 
