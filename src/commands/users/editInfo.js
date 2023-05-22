@@ -100,7 +100,6 @@ export default {
    */
   run: async (client, interaction, args) => {
     const userData = await resolveUser(interaction.user);
-    console.log(args);
 
     switch (args[0].toLowerCase()) {
       case "email":
