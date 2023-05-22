@@ -71,6 +71,11 @@ To Do's
     - [x] create-project
     - Project
       - [x] list
+      - [ ] administrator (add/remove/list)
+      - [ ] change-state
+      - [ ] delete (only server administrators or superUsers)
+      - [ ] remove-member (only projects administrators or superUsers)
+      - [ ] channels (create/delete) (text/voice) (only projects administrators or superUsers)
     - [ ] `...`
   - Modal handler
     - [x] create project
