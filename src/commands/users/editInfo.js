@@ -123,12 +123,22 @@ export default {
         var existsSocial = userData.information.social[args[1]];
 
         if (args.length !== 3) {
+          const newSocial = { ...userData.information.social };
+          delete newSocial[args[1]];
+          userData.information.social = newSocial;
+          await userData.save();
+          interaction.reply({
+            content: "La red social fue eliminada con exito",
+            ephemeral: true,
+          });
+          return;
         } else {
           for (const url of clientConfig.social[args[1]].urls) {
             if (args[2].startsWith(url)) {
-              userData.information.social[args[1]] = args[2];
+              const newSocial = { ...userData.information.social };
+              newSocial[args[1]] = args[2];
+              userData.information.social = newSocial;
               await userData.save();
-              console.log(userData);
               interaction.reply({
                 content: "Red social actualizada con exito",
                 ephemeral: true,

@@ -32,7 +32,7 @@ export default {
       name: "Facebook",
     },
     twitch: {
-      urls: ["https://twitch.tv/"],
+      urls: ["https://twitch.tv/", "https://www.twitch.tv/"],
       name: "Twitch",
     },
   },

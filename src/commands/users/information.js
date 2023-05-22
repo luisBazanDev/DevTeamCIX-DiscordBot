@@ -77,7 +77,11 @@ export default {
         },
         {
           name: "Redes sociales",
-          value: parseArrayToString(Object.values(userData.information.social)),
+          value: parseArrayToString(
+            Object.keys(userData.information.social).map((key) => {
+              return `[${client.clientConfig.social[key].name}](${userData.information.social[key]})`;
+            })
+          ),
           inline: true,
         },
       ],
