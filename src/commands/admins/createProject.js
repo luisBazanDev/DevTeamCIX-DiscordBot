@@ -7,12 +7,14 @@ import {
   ActionRowBuilder,
   TextInputBuilder,
   TextInputStyle,
+  PermissionFlagsBits,
 } from "discord.js";
 
 export default {
   name: "create-project",
   description: "Comando crear un proyecto",
   type: ApplicationCommandType.ChatInput,
+  default_member_permissions: PermissionFlagsBits.Administrator,
   options: [
     {
       type: ApplicationCommandOptionType.String,
