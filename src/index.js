@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { ShardingManager } from "discord.js";
 
-// test for update on hosting
+// test for update on hosting 2
 const manager = new ShardingManager("./src/bot.js", {
   totalShards: "auto",
   token: process.env.DISCORD_TOKEN,
